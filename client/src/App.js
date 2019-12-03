@@ -3,8 +3,11 @@ import React, { Component } from 'react'
 import {
   Button,
   Container,
+  // Divider,
   Grid,
   Header,
+  Icon,
+  Image,
   List,
   Menu,
   Responsive,
@@ -12,8 +15,10 @@ import {
   Sidebar,
   Visibility,
 } from 'semantic-ui-react'
-import CardProps from '../src/components/MentorPictureCard/mentorCard'
-import ResourceProps from '../src/components/ParentResources/resources'
+import images from './images.json'
+import CardProps from "../src/components/MentorPictureCard/mentorCard"
+import ResourceProps from "../src/components/ParentResources/resources"
+import Calender from './components/calendar/writeCalenderEvent'
 
 // Heads up!
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
@@ -82,10 +87,7 @@ class DesktopContainer extends Component {
           <Segment
             inverted
             textAlign='center'
-            style={{ 
-              minHeight: 500, 
-              padding: '1em 0em',
-            }}
+            style={{ minHeight: 700, padding: '1em 0em' }}
             vertical
           >
             <Menu
@@ -96,12 +98,20 @@ class DesktopContainer extends Component {
               size='large'
             >
               <Container>
-                <Menu.Item href = '/' as='a' active>
+                <Menu.Item as='a' active>
                   Home
                 </Menu.Item>
-                <Menu.Item href = '#calendarID' as='a'>Calendar </Menu.Item>
-                <Menu.Item href = '#mentor' as='a'>Mentor Bios</Menu.Item>
+                <Menu.Item as='a'>Calendar</Menu.Item>
+                <Menu.Item as='a'>Mentor Bios</Menu.Item>
                 <Menu.Item as='a'>Parent Resources</Menu.Item>
+                <Menu.Item position='right'>
+                  <Button as='a' inverted={!fixed}>
+                    Log in
+                  </Button>
+                  <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
+                    Sign Up
+                  </Button>
+                </Menu.Item>
               </Container>
             </Menu>
             <HomepageHeading />
@@ -143,13 +153,41 @@ class MobileContainer extends Component {
           vertical
           visible={sidebarOpened}
         >
-          <Menu.Item as='a' active>Home</Menu.Item>
+          <Menu.Item as='a' active>
+            Home
+          </Menu.Item>
           <Menu.Item as='a'>Calendar</Menu.Item>
-          <Menu.Item as='a' >Mentor Bios</Menu.Item>
+          <Menu.Item as='a'>Mentor Bios</Menu.Item>
           <Menu.Item as='a'>Parent Resources</Menu.Item>
+          <Menu.Item as='a'>Log in</Menu.Item>
+          <Menu.Item as='a'>Sign Up</Menu.Item>
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
+          <Segment
+            inverted
+            textAlign='center'
+            style={{ minHeight: 350, padding: '1em 0em' }}
+            vertical
+          >
+            <Container>
+              <Menu inverted pointing secondary size='large'>
+                <Menu.Item onClick={this.handleToggle}>
+                  <Icon name='sidebar' />
+                </Menu.Item>
+                <Menu.Item position='right'>
+                  <Button as='a' inverted>
+                    Log in
+                  </Button>
+                  <Button as='a' inverted style={{ marginLeft: '0.5em' }}>
+                    Sign Up
+                  </Button>
+                </Menu.Item>
+              </Menu>
+            </Container>
+            <HomepageHeading mobile />
+          </Segment>
+
           {children}
         </Sidebar.Pusher>
       </Responsive>
@@ -179,55 +217,65 @@ const HomepageLayout = () => (
         <Grid.Row>
           <Grid.Column width={8}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              All iIn Calendar
+              We Help Companies and Companions
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              Volunteers please log in and click on events to claim.
+              We can give your company superpowers to do things that they never thought possible.
+              Let us delight your customers and empower your needs... through pure data analytics.
             </p>
+            <Header as='h3' style={{ fontSize: '2em' }}>
+              We Make Bananas That Can Dance
+            </Header>
+            <p style={{ fontSize: '1.33em' }}>
+              Yes that's right, you thought it was the stuff of dreams, but even bananas can be
+              bioengineered.
+            </p>
+          </Grid.Column>
+          <Grid.Column floated='right' width={6}>
+            <Image bordered rounded size='large' src={images[0].src} />
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column textAlign='center'>
+            <Button size='huge'>View Calendar Here</Button>
+           <Calender/>
           </Grid.Column>
         </Grid.Row>
       </Grid>
     </Segment>
 
-    <Segment style={{ padding: '12em' }} vertical>
+    <Segment style={{ padding: '0em' }} vertical>
       <Grid marginLeft="5%" columns='equal' stackable>
-      <Grid.Row>
-          <Grid.Column width={8}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              Mentors
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              These are the mentors that are committed to see youth become leaders who bring change to neighborhoods.    
-            </p>
-          </Grid.Column>
-        </Grid.Row>
         <Grid.Row textAlign='center'>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
           <CardProps/>
           </Grid.Column>
-          </Grid.Row>
+          <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+          <CardProps/>
+          </Grid.Column>
+          <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+          <CardProps/>
+          </Grid.Column>
+          <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+          <CardProps/>
+          </Grid.Column>
+          <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+          <CardProps/>
+          </Grid.Column>
+        </Grid.Row>
       </Grid>
     </Segment>
 
-    <Segment style={{ padding: '12em' }} vertical>
-      <Grid marginLeft="5%" columns='equal' stackable>
-      <Grid.Row>
-          <Grid.Column width={8}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              Parent Resources
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              Important documents for participation in the program.
-            </p>
-          </Grid.Column>
-        </Grid.Row>
+    <Segment style={{ padding: '0em' }} vertical>
+      <Grid celled='internally' columns='equal' stackable>
         <Grid.Row textAlign='center'>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
           <ResourceProps/>
           </Grid.Column>
-          </Grid.Row>
+        </Grid.Row>
       </Grid>
     </Segment>
+
 
     <Segment inverted vertical style={{ padding: '5em 0em' }}>
       <Container>
@@ -253,10 +301,11 @@ const HomepageLayout = () => (
             </Grid.Column>
             <Grid.Column width={7}>
               <Header as='h4' inverted>
-                Our Mission:
+                Footer Header
               </Header>
               <p>
-              To create a safe place for youth to have fun, be creative, mentored and empowered.               </p>
+                Extra space for a call to action inside the footer that could help re-engage users.
+              </p>
             </Grid.Column>
           </Grid.Row>
         </Grid>

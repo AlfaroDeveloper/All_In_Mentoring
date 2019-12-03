@@ -1,35 +1,36 @@
 [
     {
-        "header": "Aalijah Fulton",
-        "image": "/assets/images/aalijah.jpg",
-        "meta":"",
-        "description":"",
-        "extra":"<a href='mailto: mentoremail@gmail.com' >
-        <Icon name='user' />
-        Email me
-      </a>"
-    },
-    {
-        "header": "Kinza Shafir",
-        "image": "/assets/images/Kinza.jpg",
+        "name": "Aalijah Fulton",
+        "image": "/assets/images/loveWillHelp.jpg",
+        "header":"",
         "meta":"",
         "description":""
     },
     {
-        "header": "Terrijanae Rachal",
-        "image": "/assets/images/terrijanae.jpg",
+        "name": "",
+        "image": "/assets/images/loveWillHelp.jpg",
+        "header":"",
         "meta":"",
         "description":""
     },
     {
-        "header": "Jessa Mae Tabasondra",
-        "image": "/assets/images/jessamae.jpg",
+        "name": "",
+        "image": "/assets/images/loveWillHelp.jpg",
+        "header":"",
         "meta":"",
         "description":""
     },
     {
-        "header": "Lovell Davis",
-        "image": "/assets/images/lovell.jpg",
+        "name": "",
+        "image": "/assets/images/loveWillHelp.jpg",
+        "header":"",
+        "meta":"",
+        "description":""
+    },
+    {
+        "name": "",
+        "image": "/assets/images/loveWillHelp.jpg",
+        "header":"",
         "meta":"",
         "description":""
     }
