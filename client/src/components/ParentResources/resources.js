@@ -6,15 +6,14 @@ const ResourceProps = () => (
     <Item>
 
       <Item.Content>
-        <Item.Header as='a'><a href="/assets/pdf/codeOfConduct.pdf">Code of Conduct</a></Item.Header>
-      </Item.Content>
-    </Item>
-
-    <Item>
+      <Item.Header><a className="file pdf icon" data-content="Code of Conduct" href="/assets/pdf/codeOfConduct.pdf" target = "blank">Code of Conduct</a></Item.Header>
+        <i className="massive file pdf icon"></i>
+        </Item.Content>
 
       <Item.Content>
-        <Item.Header as='a'><a href="/assets/pdf/liability.pdf">Activity Waiver</a></Item.Header>
-      </Item.Content>
+      <Item.Header><a className="file pdf icon" data-content="Activity Waiver" href="/assets/pdf/liability.pdf" target = "blank">Activity Waiver</a></Item.Header>
+        <i className="massive file pdf icon"></i>      
+        </Item.Content>
     </Item>
   </Item.Group>
 )
