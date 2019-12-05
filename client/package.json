@@ -5,6 +5,7 @@
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "axios": "^0.18.0",
+    "if-env": "^1.0.4",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-paypal-button": "^4.1.1",
