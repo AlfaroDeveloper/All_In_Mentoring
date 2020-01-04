@@ -29,7 +29,7 @@ const getWidth = () => {
  * such things.
  */
 const HomepageHeading = ({ mobile }) => (
-  <Container style= {{marginTop: '30px'}}className image>
+  <Container style= {{marginTop: '30px'}} className image>
   <img width="100%" style={{opacity: 0.5}} src="https://i.gifer.com/Vp0W.gif" alt="new"/>
   <p1><span>ALL iiN Mentoring</span></p1>
   <p2><span>All Invested In Neighborhoods</span></p2>
@@ -65,7 +65,7 @@ class DesktopContainer extends Component {
           <Segment className="jumbotronhead"
           inverted
             textAlign='center'
-            color='#4c5760'
+            color='grey'
             style={{
               minHeight: 300,
               padding: '1em 0em',
