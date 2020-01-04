@@ -1,20 +1,18 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
-
 
 .form{
   text-align: center;
 }
+
 .image { 
   position: relative; 
   width: 100%; /* for IE 6 */
@@ -26,7 +24,6 @@ p1 {
   left: 0; 
   width: 100%; 
   font-size: 75px;
-
 }
 
 p2 span { 
@@ -39,6 +36,4 @@ p2 span {
 
 .jumbotronhead {
   background: #4C5760 !important;
-
-
 }
